@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Boxing manager</title>
+  </head>
+  <body id="app">
+    <div class="container">
+      <h1>Boxing Manager</h1>
+
+      <!-- Boxer Manager View 1 -->
+
+      <div id="view-manager" class="view active">
+        <!-- create and edit boxer form -->
+        <section class="manager-section">
+          <h2 id="form-title">Create New Boxer</h2>
+          <form id="boxer-form" action="">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" required />
+            </div>
+            <button id="form-submit-btn" class="btn btn-primary" type="button">
+              Create Boxer
+            </button>
+          </form>
+        </section>
+
+        <section class="manager-section">
+          <h2>Your Stable</h2>
+          <div id="boxer-list">
+            <p id="boxer-list-empty">No boxers</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Game view 2 -->
+      <div id="view-game" class="view">
+        <div id="game-ring">
+          <div class="boxer-names">
+            <span id="game-player-name">Player</span>
+            <span id="game-opponent-name">Opponent</span>
+          </div>
+
+          <!-- health bars -->
+          <div class="health-bar-container">
+            <div id="player-health-bar" class="health-bar">
+              <div class="health-bar-inner"></div>
+            </div>
+            <div id="opponent-health-bar" class="health-bar">
+              <div class="health-bar-inner"></div>
+            </div>
+          </div>
+
+          <!-- visual -->
+          <div class="ring-visual">
+            <div id="player-figure" class="boxer-figure"></div>
+            <div id="opponent-figure" class="boxer-figure"></div>
+          </div>
+          <p id="game-message">Choose your move!</p>
+        </div>
+
+        <!-- buttons to do action -->
+        <div id="game-controls">
+          <button id="btn-punch" class="btn">Punch</button>
+          <button id="btn-block" class="btn">Block</button>
+          <button id="btn-counter" class="btn">Counter</button>
+        </div>
+        <button id="btn-quit-game" class="btn btn-secondary">Quit Match</button>
+      </div>
+    </div>
+
+    <!-- modal for game over -->
+    <div id="game-over-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h2 id="modal-title">YOU WIN!</h2>
+        <p id="modal-body">You earned 100 Gold.</p>
+        <button id="modal-close-btn" class="btn btn-primary">
+          Back to Manager
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
