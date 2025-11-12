@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boxers-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: boxers-frontend
+  template:
+    metadata:
+      labels:
+        app: boxers-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: theisenkassens/boxers-frontend:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: boxers-frontend
+spec:
+  selector:
+    app: boxers-frontend
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP
+  
