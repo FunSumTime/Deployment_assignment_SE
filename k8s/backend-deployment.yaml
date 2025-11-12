@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boxers-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boxers-backend
+  template:
+    metadata:
+      labels:
+        app: boxers-backend
+    spec:
+      containers:
+        - name: backend
+          image: theisenkassens/boxers-backend:latest
+          ports:
+            - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: boxers-backend
+spec:
+  selector:
+    app: boxers-backend
+  ports:
+    - port: 5000
+      targetPort: 5000
