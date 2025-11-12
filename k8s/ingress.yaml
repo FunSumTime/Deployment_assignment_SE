@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: boxers-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: boxers.theisen.fit
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: boxers-frontend
+                port:
+                  number: 80
+          - path: /boxers
+            pathType: Prefix
+            backend:
+              service:
+                name: boxers-backend
+                port:
+                  number: 5000
