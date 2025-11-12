@@ -34,21 +34,34 @@ CREATE TABLE boxers (
 
 # How to build and push the Docker images
 
+-All from the Deployment_assignment_SE-main directory
+
 **Front end**
+-docker build -t theisenkassens/boxers-frontend ./client
 
--docker build -t boxers-frontend ./client
-
--docker tag boxers-frontend theisenkassens/boxers-frontend:latest
-
--docker push theisenkassens/boxers-frontend:latest
+-docker push theisenkassens/boxers-frontend
 
 **Back end**
 
--docker build -t boxers-backend .
+-docker build -t theisenkassens/boxers-backend .
 
--docker tag boxers-backend theisenkassens/boxers-backend:latest
+-docker push theisenkassens/boxers-backend
 
--docker push theisenkassens/boxers-backend:latest
+
+# How to apply the Kubernetes files
+
+- All from the k8s directory run:
+
+**deployments**
+
+-kubectl apply -f backend-deployment.yaml
+
+-kubectl apply -f frontend-deployment.yaml
+
+**ingress**
+
+-kubectl apply -f ingress.yaml
+
 
 
 
