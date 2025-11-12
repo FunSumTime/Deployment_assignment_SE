@@ -31,3 +31,17 @@ CREATE TABLE boxers (
 | Update A Boxer  | PUT   | /boxers/\<id>   |
 | Delete A Boxer  | DELETE   | /boxers/\<id>   |
 
+
+# How to build and push the Docker images
+**Front end**
+-docker build -t boxers-frontend ./client
+-docker tag boxers-frontend theisenkassens/boxers-frontend:latest
+-docker push theisenkassens/boxers-frontend:latest
+
+**Back end**
+-docker build -t boxers-backend .
+-docker tag boxers-backend theisenkassens/boxers-backend:latest
+-docker push theisenkassens/boxers-backend:latest
+
+
+
