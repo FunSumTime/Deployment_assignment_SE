@@ -66,15 +66,15 @@ function loadBoxers() {
 
   fetch(BACKEND_URL).then(function (response) {
     response.json().then(function (data) {
-      console.log(data);
+      //console.log(data);
       data.forEach(load_boxer);
     });
   });
-  console.log(allboxers);
+  //console.log(allboxers);
 }
 
 function load_boxer(boxer) {
-  console.log(boxer);
+  //console.log(boxer);
   let card = document.createElement("div");
   card.className = "boxer-card";
   let boxerinfo = document.createElement("div");
@@ -108,7 +108,7 @@ function load_boxer(boxer) {
     lastNameInput.value = boxer["last_name"];
     formSubmitBtn.innerHTML = "Edit Boxer";
     currentBoxer = boxer;
-    console.log(currentBoxer);
+    //console.log(currentBoxer);
   };
   edit.innerHTML = "Edit";
   let delete_ = document.createElement("button");
@@ -125,7 +125,7 @@ function load_boxer(boxer) {
         "Content-Type": "application/x-www-form-urlencoded",
       },
     }).then(function () {
-      console.log("DELETED");
+      //console.log("DELETED");
       loadBoxers();
     });
   };
@@ -143,8 +143,8 @@ function load_boxer(boxer) {
 function post_boxer() {
   let firstName = firstNameInput.value;
   let lastName = lastNameInput.value;
-  console.log(firstName);
-  console.log(lastName);
+  //console.log(firstName);
+  //console.log(lastName);
 
   let wins = 0;
   let loses = 0;
@@ -292,7 +292,7 @@ function endGame() {
   gameControls.style.display = "none"; // Hide buttons
 
   let title, body;
-  console.log(currentBoxer);
+  //console.log(currentBoxer);
 
   if (playerHealth <= 0) {
     title = "YOU LOSE";
