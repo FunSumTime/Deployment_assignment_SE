@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://boxers.theisen.fit/boxers";
+const BACKEND_URL = "http://boxers.theisen.fit";
 
 let allboxers = [];
 
