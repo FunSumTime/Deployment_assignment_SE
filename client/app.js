@@ -360,6 +360,7 @@ loadBoxers();
 
 function startGame() {
   // reset state
+  console.log("Test");
   fight_over = false;
   playerHealth = 100;
   opponentHealth = 100;
