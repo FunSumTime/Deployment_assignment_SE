@@ -51,6 +51,8 @@ function swithcView(viewName) {
     loadBoxers();
   } else {
     viewGame.classList.add("active");
+    startGame();
+    
   }
 }
 
@@ -355,3 +357,22 @@ loadBoxers();
 // }
 
 // test();
+
+function startGame() {
+  // reset state
+  fight_over = false;
+  playerHealth = 100;
+  opponentHealth = 100;
+
+  // reset UI
+  gameMessage.textContent = "Choose your move!";
+  playerHealthBar.style.width = "100%";
+  opponentHealthBar.style.width = "100%";
+  gameControls.style.display = "";      // let CSS show it (or "flex"/"block")
+  hideModal();                          // just in case modal stayed open
+
+  // clear any leftover animation classes
+  playerFigure.className = "boxer-figure";
+  opponentFigure.className = "boxer-figure";
+}
+
