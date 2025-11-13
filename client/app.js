@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://localhost:5000/boxers";
+const BACKEND_URL = "http://boxers.theisen.fit/boxers";
 
 let allboxers = [];
 
